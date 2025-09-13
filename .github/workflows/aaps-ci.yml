@@ -22,6 +22,9 @@ jobs:
   build:
     name: Build AAPS
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      discussions: write
     steps:
       - name: Decode Secrets Keystore Set and Oauth2 to Env
         run: |
@@ -115,38 +118,6 @@ jobs:
           rm -f "$KEYTOOL_LOG"
           echo "✅ Keystore and credentials validated."
 
-      - name: Decode GDrive OAuth2 secrets
-        run: |
-          echo "🔐 Decoding GDRIVE_OAUTH2..."
-          DECODED=$(echo "${{ secrets.GDRIVE_OAUTH2 }}" | base64 -d)
-          
-          GDRIVE_CLIENT_ID=$(echo "$DECODED" | cut -d'|' -f1)
-          GDRIVE_REFRESH_TOKEN=$(echo "$DECODED" | cut -d'|' -f2)
-          
-          echo "::add-mask::$GDRIVE_CLIENT_ID"
-          echo "::add-mask::$GDRIVE_REFRESH_TOKEN"
-          
-          echo "GDRIVE_CLIENT_ID=$GDRIVE_CLIENT_ID" >> $GITHUB_ENV
-          echo "GDRIVE_REFRESH_TOKEN=$GDRIVE_REFRESH_TOKEN" >> $GITHUB_ENV
-          
-          echo "✅ GDRIVE_CLIENT_ID and GDRIVE_REFRESH_TOKEN extracted from GDRIVE_OAUTH2"
-
-      - name: Retrieving Google Drive access token
-        run: |
-          echo "🔐 Getting Google OAuth2 access token..."
-          TOKEN_RESPONSE=$(curl -s -X POST https://oauth2.googleapis.com/token \
-            -d client_id="$GDRIVE_CLIENT_ID" \
-            -d refresh_token="$GDRIVE_REFRESH_TOKEN" \
-            -d grant_type=refresh_token)
-          ACCESS_TOKEN=$(echo "$TOKEN_RESPONSE" | jq -r .access_token)
-          echo "::add-mask::$ACCESS_TOKEN"
-          if [ -z "$ACCESS_TOKEN" ] || [ "$ACCESS_TOKEN" = "null" ]; then
-            echo "❌ Failed to get access token."
-            echo "$TOKEN_RESPONSE"
-            exit 1
-          fi
-          echo "ACCESS_TOKEN=$ACCESS_TOKEN" >> $GITHUB_ENV
-          echo "✅ Access token obtained."
 
       - name: Checkout source code
         uses: actions/checkout@v4
@@ -206,11 +177,10 @@ jobs:
           mv wear/build/outputs/apk/${{ env.VARIANT_FLAVOR }}/${{ env.VARIANT_TYPE }}/*.apk aaps-wear-${{ env.VERSION }}${{ env.VERSION_SUFFIX }}.apk
 
       - name: Upload Release Asset
-        uses: svenstaro/upload-release-action@v2.9.0
+        uses: softprops/action-gh-release@v2
+        if: github.ref_type == 'tag'
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: |
+          files: |
             "aaps-${VERSION}${VERSION_SUFFIX}.apk" # The path to the file you want to upload
             aaps-wear-${{ env.VERSION }}${{ env.VERSION_SUFFIX }}.apk
-          asset_name: "aaps-${VERSION}${VERSION_SUFFIX}.apk" # The name of the asset in the release
-          tag: ${{ github.ref }} # The tag of the current release
