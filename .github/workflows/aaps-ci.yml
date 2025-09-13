@@ -180,5 +180,5 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           files: |
-            "aaps-${VERSION}${VERSION_SUFFIX}.apk" # The path to the file you want to upload
+            aaps-${{ env.VERSION }}${{ env.VERSION_SUFFIX }}.apk # The path to the file you want to upload
             aaps-wear-${{ env.VERSION }}${{ env.VERSION_SUFFIX }}.apk
