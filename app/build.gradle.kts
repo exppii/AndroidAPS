@@ -186,7 +186,7 @@ dependencies {
     implementation(project(":pump:danars"))
     implementation(project(":pump:danar"))
     implementation(project(":pump:diaconn"))
-    implementation(project(":pump:eopatch"))
+    // implementation(project(":pump:eopatch"))
     implementation(project(":pump:medtrum"))
     implementation(project(":pump:equil"))
     implementation(project(":pump:insight"))
