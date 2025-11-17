@@ -49,10 +49,6 @@ files:
     translation: /pump/danars/src/main/res/values-%android_code%/strings.xml
   - source: /pump/diaconn/src/main/res/values/strings.xml
     translation: /pump/diaconn/src/main/res/values-%android_code%/strings.xml
-  - source: /pump/eopatch/src/main/res/values/strings.xml
-    translation: /pump/eopatch/src/main/res/values-%android_code%/strings.xml
-  - source: /pump/eopatch/src/main/res/values/strings_alarm.xml
-    translation: /pump/eopatch/src/main/res/values-%android_code%/strings_alarm.xml
   - source: /pump/equil/src/main/res/values/strings.xml
     translation: /pump/equil/src/main/res/values-%android_code%/strings.xml
   - source: /pump/insight/src/main/res/values/alert_codes.xml

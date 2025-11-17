@@ -56,7 +56,7 @@ enum class Sources {
     Omnipod,            //No entry currently
     OmnipodEros,
     OmnipodDash,        //No entry currently
-    EOPatch2,
+
     Equil,
     Medtrum,
     MDI,
