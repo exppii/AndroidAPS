@@ -1,7 +1,11 @@
 package app.aaps.wear.interaction.menus
 
+import android.Manifest
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import androidx.activity.result.contract.ActivityResultContracts
 import app.aaps.core.interfaces.rx.events.EventWearToMobile
 import app.aaps.core.interfaces.rx.weardata.EventData
 import app.aaps.core.interfaces.rx.weardata.EventData.ActionResendData
@@ -15,10 +19,39 @@ import app.aaps.wear.interaction.utils.MenuListActivity
 
 class MainMenuActivity : MenuListActivity() {
 
+    private val permissionsLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { permissions ->
+            permissions.entries.forEach {
+                Log.d("Permissions", "${it.key} = ${it.value}")
+            }
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTitle(R.string.label_actions_activity)
         super.onCreate(savedInstanceState)
+        requestPermissions()
         rxBus.send(EventWearToMobile(ActionResendData("MainMenuListActivity")))
+    }
+
+    private fun requestPermissions() {
+        val permissionsToRequest = mutableListOf(
+            Manifest.permission.BODY_SENSORS,
+            Manifest.permission.ACTIVITY_RECOGNITION,
+            Manifest.permission.ACCESS_FINE_LOCATION
+        )
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            permissionsToRequest.add(Manifest.permission.POST_NOTIFICATIONS)
+        }
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.P) { // Android 9.0 (Pie) and below
+            permissionsToRequest.add(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { // Android 12 and above
+            permissionsToRequest.add(Manifest.permission.BLUETOOTH_SCAN)
+            permissionsToRequest.add(Manifest.permission.BLUETOOTH_CONNECT)
+        }
+        if (permissionsToRequest.isNotEmpty()) {
+            permissionsLauncher.launch(permissionsToRequest.toTypedArray())
+        }
     }
 
     override fun provideElements(): List<MenuItem> =
