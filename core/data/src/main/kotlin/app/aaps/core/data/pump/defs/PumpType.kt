@@ -484,7 +484,7 @@ enum class PumpType(
         Omnipod,
         OmnipodEros,
         OmnipodDash,
-        EOPatch2,
+
         Medtrum,
         MDI,
         VirtualPump,

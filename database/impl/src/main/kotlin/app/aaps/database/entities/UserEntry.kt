@@ -173,7 +173,6 @@ data class UserEntry(
         Omnipod,            //No entry currently
         OmnipodEros,
         OmnipodDash,        //No entry currently
-        EOPatch2,
         Equil,
         Medtrum,
         MDI,

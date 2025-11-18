@@ -18,7 +18,6 @@ fun PumpType.Source.toUeSource(): Sources =
         PumpType.Source.Omnipod     -> Sources.Omnipod
         PumpType.Source.OmnipodEros -> Sources.OmnipodEros
         PumpType.Source.OmnipodDash -> Sources.OmnipodDash
-        PumpType.Source.EOPatch2    -> Sources.EOPatch2
         PumpType.Source.Medtrum     -> Sources.Medtrum
         PumpType.Source.MDI         -> Sources.MDI
         PumpType.Source.VirtualPump -> Sources.VirtualPump
