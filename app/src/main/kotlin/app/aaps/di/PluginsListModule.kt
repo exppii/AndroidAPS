@@ -59,7 +59,7 @@ import app.aaps.pump.danarkorean.DanaRKoreanPlugin
 import app.aaps.pump.danars.DanaRSPlugin
 import app.aaps.pump.danarv2.DanaRv2Plugin
 import app.aaps.pump.diaconn.DiaconnG8Plugin
-import app.aaps.pump.eopatch.EopatchPumpPlugin
+
 import app.aaps.pump.equil.EquilPumpPlugin
 import app.aaps.pump.insight.InsightPlugin
 import app.aaps.pump.medtronic.MedtronicPumpPlugin
@@ -204,11 +204,7 @@ abstract class PluginsListModule {
     @IntKey(155)
     abstract fun bindDiaconnG8Plugin(plugin: DiaconnG8Plugin): PluginBase
 
-    @Binds
-    @PumpDriver
-    @IntoMap
-    @IntKey(156)
-    abstract fun bindEopatchPumpPlugin(plugin: EopatchPumpPlugin): PluginBase
+
 
     @Binds
     @PumpDriver
