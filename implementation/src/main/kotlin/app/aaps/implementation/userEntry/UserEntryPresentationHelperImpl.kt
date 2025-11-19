@@ -70,6 +70,7 @@ class UserEntryPresentationHelperImpl @Inject constructor(
         Sources.Eversense           -> R.drawable.ic_eversense
         Sources.Glimp               -> R.drawable.ic_glimp
         Sources.MM640g              -> R.drawable.ic_generic_cgm
+        Sources.Ottai               -> R.drawable.ic_ottai
         Sources.NSClientSource      -> R.drawable.ic_nsclient_bg
         Sources.PocTech             -> R.drawable.ic_poctech
         Sources.Tomato              -> R.drawable.ic_sensor

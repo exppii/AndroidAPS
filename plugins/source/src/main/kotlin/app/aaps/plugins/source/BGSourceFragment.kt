@@ -198,6 +198,7 @@ class BGSourceFragment : DaggerFragment(), MenuProvider {
                         R.string.eversense          -> Sources.Eversense
                         R.string.glimp              -> Sources.Glimp
                         R.string.mm640g             -> Sources.MM640g
+                        R.string.ottai_app          -> Sources.Ottai
                         R.string.ns_client_bg       -> Sources.NSClientSource
                         R.string.poctech            -> Sources.PocTech
                         R.string.tomato             -> Sources.Tomato

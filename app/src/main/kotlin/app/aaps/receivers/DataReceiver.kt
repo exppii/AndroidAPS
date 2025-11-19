@@ -19,6 +19,7 @@ import app.aaps.plugins.source.EversensePlugin
 import app.aaps.plugins.source.GlimpPlugin
 import app.aaps.plugins.source.MM640gPlugin
 import app.aaps.plugins.source.PoctechPlugin
+import app.aaps.plugins.source.OttaiPlugin
 import app.aaps.plugins.source.TomatoPlugin
 import app.aaps.plugins.source.XdripSourcePlugin
 import dagger.android.DaggerBroadcastReceiver
@@ -71,7 +72,12 @@ open class DataReceiver : DaggerBroadcastReceiver() {
             Telephony.Sms.Intents.SMS_RECEIVED_ACTION ->
                 OneTimeWorkRequest.Builder(SmsCommunicatorPlugin.SmsCommunicatorWorker::class.java)
                     .setInputData(dataWorkerStorage.storeInputData(bundle, intent.action)).build()
-
+            Intents.OTTAI_APP, Intents.OTTAI_APP_CN                       ->
+                OneTimeWorkRequest.Builder(OttaiPlugin.OttaiWorker::class.java)
+                    .setInputData(Data.Builder().also {
+                        it.copyString("collection", bundle)
+                        it.copyString("data", bundle)
+                    }.build()).build()
             Intents.EVERSENSE_BG                      ->
                 OneTimeWorkRequest.Builder(EversensePlugin.EversenseWorker::class.java)
                     .setInputData(dataWorkerStorage.storeInputData(bundle, intent.action)).build()

@@ -47,7 +47,10 @@ interface Intents {
         var AIDEX_TIMESTAMP = "com.microtechmd.cgms.aidex.Time" // epoch in ms
         var AIDEX_TRANSMITTER_SN = "com.microtechmd.cgms.aidex.TransmitterSerialNumber"
         var AIDEX_SENSOR_ID = "com.microtechmd.cgms.aidex.SensorId"
-
+        // Patched Ottai App -> AAPS
+        const val OTTAI_APP = "info.nightscout.androidaps.action.OTTAI_APP"
+           // Patched Ottai App -> AAPS (China)
+        const val OTTAI_APP_CN = "cn.diyaps.sharing.OT_APP"
         // Broadcast status
         const val AAPS_BROADCAST = "info.nightscout.androidaps.status"
     }

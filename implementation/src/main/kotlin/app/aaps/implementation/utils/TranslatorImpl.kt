@@ -254,6 +254,7 @@ class TranslatorImpl @Inject internal constructor(
         Sources.Eversense                          -> TODO()
         Sources.Glimp                              -> TODO()
         Sources.MM640g                             -> TODO()
+        Sources.OTTAI                              -> TODO()
         Sources.NSClientSource                     -> TODO()
         Sources.PocTech                            -> TODO()
         Sources.Aidex                              -> TODO()

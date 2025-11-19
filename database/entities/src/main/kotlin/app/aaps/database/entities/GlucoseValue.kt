@@ -111,6 +111,7 @@ data class GlucoseValue(
         LIBRE_2_NATIVE("Libre2"),
         POCTECH_NATIVE("Poctech"),
         GLUNOVO_NATIVE("Glunovo"),
+        OTTAI("Ottai"),
         INTELLIGO_NATIVE("Intelligo"),
         MM_600_SERIES("MM600Series"),
         EVERSENSE("Eversense"),

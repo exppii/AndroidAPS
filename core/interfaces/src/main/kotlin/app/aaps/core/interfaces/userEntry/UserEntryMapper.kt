@@ -115,6 +115,7 @@ class UserEntryMapper {
         Eversense(UserEntry.Sources.Eversense),
         Glimp(UserEntry.Sources.Glimp),
         MM640g(UserEntry.Sources.MM640g),
+        Ottai(UserEntry.Sources.Ottai),
         NSClientSource(UserEntry.Sources.BG),
         PocTech(UserEntry.Sources.PocTech),
         Tomato(UserEntry.Sources.Tomato),

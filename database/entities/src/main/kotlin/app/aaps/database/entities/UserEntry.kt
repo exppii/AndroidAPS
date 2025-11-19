@@ -149,6 +149,7 @@ data class UserEntry(
         Eversense,
         Glimp,
         MM640g,
+        Ottai,              //From Ottai Plugin
         NSClientSource,
         PocTech,
         Tomato,

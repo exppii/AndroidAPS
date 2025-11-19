@@ -12,6 +12,9 @@
     <string name="description_source_mm640g">从美敦力600Series 的AndroidUploader 接收血糖值。</string>
     <string name="poctech">Poctech</string>
     <string name="description_source_poctech">从 Poctech app 接收血糖值。</string>
+    <!-- Patched Ottai App -->
+    <string name="ottai_app">Ottai</string>
+    <string name="description_source_patched_ottai_app">从欧态获取接收血糖值。</string>
     <string name="glunovo">Glunovo</string>
     <string name="description_source_glunovo">从Glunovo应用接收血糖数据。</string>
     <string name="tomato">番茄（喵喵）</string>

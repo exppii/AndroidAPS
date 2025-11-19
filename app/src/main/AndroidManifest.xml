@@ -84,6 +84,10 @@
             <intent-filter>
                 <!-- Receiver from xDrip -->
                 <action android:name="com.eveningoutpost.dexdrip.BgEstimate" />
+                <!-- Receiver from patched Ottai app -->
+                <action android:name="info.nightscout.androidaps.action.OTTAI_APP" />
+                <!-- Receiver from patched Ottai app (China) -->
+                <action android:name="cn.diyaps.sharing.OT_APP" />
                 <!-- Receiver from 640g uploader -->
                 <action android:name="com.eveningoutpost.dexdrip.NS_EMULATOR" />
                 <!-- Receiver from glimp -->
