@@ -165,12 +165,12 @@ class PrefFileListProviderImpl @Inject constructor(
             }
         }
 
-        meta[PrefsMetadataKeyImpl.DEVICE_MODEL]?.let { model ->
-            if (model.value != config.get().currentDeviceModelString) {
-                model.status = PrefsStatusImpl.WARN
-                model.info = rh.gs(R.string.metadata_warning_different_device)
-            }
-        }
+        // meta[PrefsMetadataKeyImpl.DEVICE_MODEL]?.let { model ->
+        //     if (model.value != config.get().currentDeviceModelString) {
+        //         model.status = PrefsStatusImpl.WARN
+        //         model.info = rh.gs(R.string.metadata_warning_different_device)
+        //     }
+        // }
 
         meta[PrefsMetadataKeyImpl.CREATED_AT]?.let { createdAt ->
             try {
