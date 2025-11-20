@@ -32,7 +32,6 @@
         android:id="@+id/delta_large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="(+1.0)"
         android:textSize="60sp"
         android:textStyle="bold"
         android:visibility="gone"
@@ -40,7 +39,8 @@
         app:layout_constraintEnd_toStartOf="@+id/arrows_layout"
         app:layout_constraintStart_toEndOf="@+id/bg"
         app:layout_constraintTop_toTopOf="@+id/bg"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        tools:text="(+1.0)" />
 
     <LinearLayout
         android:id="@+id/arrows_layout"
@@ -79,23 +79,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/arrows_layout"
         app:layout_constraintEnd_toStartOf="@+id/aps_mode_layout"
         app:layout_constraintStart_toEndOf="@+id/arrows_layout"
-        app:layout_constraintBottom_toBottomOf="@+id/arrows_layout">
+        tools:visibility="gone">
 
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:focusable="true">
+            android:focusable="true"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:textAlignment="textEnd"
-                android:text="Δ: "
                 android:contentDescription="last delta"
+                android:text="Δ: "
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 tools:ignore="HardcodedText" />
 
@@ -105,25 +107,25 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:textAlignment="textEnd"
-                tools:text="n/a"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                tools:text="n/a" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:focusable="true">
+            android:focusable="true"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:textAlignment="textEnd"
-                android:text="Δ15: "
                 android:contentDescription="15 minutes delta"
+                android:text="Δ15: "
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 tools:ignore="HardcodedText" />
 
@@ -133,25 +135,25 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:textAlignment="textEnd"
-                tools:text="n/a"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                tools:text="n/a" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:focusable="true">
+            android:focusable="true"
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:textAlignment="textEnd"
-                android:text="Δ40: "
                 android:contentDescription="40 minutes delta"
+                android:text="Δ40: "
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 tools:ignore="HardcodedText" />
 
@@ -161,9 +163,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:textAlignment="textEnd"
-                tools:text="n/a"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"
+                tools:text="n/a" />
 
         </TableRow>
 
@@ -188,9 +190,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="-4dp"
-            android:visibility="gone"
-            app:srcCompat="@drawable/ic_loop_closed"
-            android:contentDescription="@string/aps_mode_title" />
+            android:contentDescription="@string/aps_mode_title"
+            app:srcCompat="@drawable/ic_loop_closed" />
 
         <TextView
             android:id="@+id/aps_mode_text"
@@ -213,7 +214,6 @@
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/bg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/aps_mode_layout"
@@ -225,10 +225,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="-5dp"
-            tools:text="8:00 PM"
             android:textSize="25sp"
             android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            tools:text="8:00 PM" />
 
         <TextView
             android:id="@+id/time_ago_short"
@@ -237,10 +237,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="-10dp"
             android:gravity="center_vertical"
-            tools:text="(-5)"
             android:textSize="19sp"
             android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            tools:text="(-5)" />
 
     </LinearLayout>
 
@@ -376,21 +376,23 @@
         android:id="@+id/as_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:focusable="true"
         android:gravity="center_horizontal"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/extended_layout"
         app:layout_constraintTop_toTopOf="@+id/iob_layout"
         tools:ignore="UseCompoundDrawables"
-        android:focusable="true">
+        tools:visibility="gone">
 
         <ImageView
             android:id="@+id/sensitivity_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            app:srcCompat="@drawable/ic_swap_vert_black_48dp_green"
-            android:contentDescription="@string/a11y_autosens_label" />
+            android:contentDescription="@string/a11y_autosens_label"
+            app:srcCompat="@drawable/ic_swap_vert_black_48dp_green" />
 
         <TextView
             android:id="@+id/sensitivity"
@@ -399,10 +401,10 @@
             android:gravity="center_horizontal"
             android:paddingTop="3dp"
             android:paddingBottom="3dp"
-            tools:text="n/a"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textStyle="bold"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            tools:text="n/a" />
 
         <TextView
             android:id="@+id/variable_sensitivity"
@@ -411,11 +413,11 @@
             android:layout_marginTop="-9dp"
             android:gravity="center_horizontal"
             android:paddingBottom="3dp"
-            tools:text="n/a"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textStyle="bold"
             android:visibility="visible"
-            tools:ignore="HardcodedText" />
+            tools:ignore="HardcodedText"
+            tools:text="n/a" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
