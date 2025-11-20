@@ -94,7 +94,7 @@
 
                 <TextView
                     android:id="@+id/bg_input_label"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:padding="10dp"
@@ -104,7 +104,7 @@
 
                 <app.aaps.core.ui.elements.NumberPicker
                     android:id="@+id/bg_input"
-                    android:layout_width="110dp"
+                    android:layout_width="130dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="2dp"
                     app:customContentDescription="@string/a11y_current_bg" />
@@ -127,7 +127,7 @@
 
                 <TextView
                     android:id="@+id/carbs_input_label"
-                    android:layout_width="wrap_content"
+                    android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:labelFor="@id/carbs_input"
@@ -138,7 +138,7 @@
 
                 <app.aaps.core.ui.elements.NumberPicker
                     android:id="@+id/carbs_input"
-                    android:layout_width="110dp"
+                    android:layout_width="130dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="2dp"
@@ -168,7 +168,7 @@
 
                     <TextView
                         android:id="@+id/correction_input_label"
-                        android:layout_width="0dp"
+                        android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="10dp"
@@ -187,13 +187,14 @@
                         android:text="%"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textStyle="bold"
+                        android:visibility="gone"
                         tools:ignore="HardcodedText" />
 
                 </LinearLayout>
 
                 <app.aaps.core.ui.elements.NumberPicker
                     android:id="@+id/correction_input"
-                    android:layout_width="110dp"
+                    android:layout_width="130dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     app:customContentDescription="@string/a11_correction_units" />
