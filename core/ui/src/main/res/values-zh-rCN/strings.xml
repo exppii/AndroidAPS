@@ -64,7 +64,7 @@
     <string name="ic_label">IC碳水系数</string>
     <string name="isf_label">ISF胰岛素敏感系数</string>
     <string name="basal_label">基础率</string>
-    <string name="target_label">血糖控制目标值</string>
+    <string name="target_label">血糖目标</string>
     <string name="dia_long_label">胰岛素作用持续时间DIA</string>
     <string name="ic_long_label">碳水化合物系数（ICR）</string>
     <string name="isf_long_label">胰岛素敏感系数ISF</string>

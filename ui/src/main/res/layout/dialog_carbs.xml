@@ -225,12 +225,13 @@
                 tools:ignore="HardcodedText" />
 
             <com.google.android.material.button.MaterialButton
-                style="@style/GrayButton"
                 android:id="@+id/plus2"
+                style="@style/GrayButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="+10"
+                android:visibility="gone"
                 tools:ignore="HardcodedText" />
 
             <com.google.android.material.button.MaterialButton

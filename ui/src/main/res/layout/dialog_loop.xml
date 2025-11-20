@@ -220,10 +220,11 @@
                     android:layout_height="fill_parent"
                     android:layout_marginEnd="-2dp"
                     android:layout_weight="0.5"
+                    android:drawableTop="@drawable/ic_loop_paused"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
-                    android:drawableTop="@drawable/ic_loop_paused"
-                    android:text="@string/duration3h" />
+                    android:text="@string/duration3h"
+                    android:visibility="gone" />
 
                 <app.aaps.core.ui.elements.SingleClickButton
                     android:id="@+id/overview_suspend_10h"
@@ -329,10 +330,11 @@
                     android:layout_height="fill_parent"
                     android:layout_marginEnd="-2dp"
                     android:layout_weight="0.5"
+                    android:drawableTop="@drawable/ic_loop_disconnected"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
-                    android:drawableTop="@drawable/ic_loop_disconnected"
-                    android:text="@string/duration2h" />
+                    android:text="@string/duration2h"
+                    android:visibility="gone" />
 
                 <app.aaps.core.ui.elements.SingleClickButton
                     android:id="@+id/overview_disconnect_3h"
@@ -341,10 +343,11 @@
                     android:layout_height="fill_parent"
                     android:layout_marginEnd="-2dp"
                     android:layout_weight="0.5"
+                    android:drawableTop="@drawable/ic_loop_disconnected"
                     android:paddingStart="5dp"
                     android:paddingEnd="5dp"
-                    android:drawableTop="@drawable/ic_loop_disconnected"
-                    android:text="@string/duration3h" />
+                    android:text="@string/duration3h"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
