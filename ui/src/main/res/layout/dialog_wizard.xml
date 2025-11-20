@@ -104,7 +104,7 @@
 
                 <app.aaps.core.ui.elements.NumberPicker
                     android:id="@+id/bg_input"
-                    android:layout_width="130dp"
+                    android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="2dp"
                     app:customContentDescription="@string/a11y_current_bg" />
@@ -138,7 +138,7 @@
 
                 <app.aaps.core.ui.elements.NumberPicker
                     android:id="@+id/carbs_input"
-                    android:layout_width="130dp"
+                    android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="2dp"
@@ -193,7 +193,7 @@
 
                 <app.aaps.core.ui.elements.NumberPicker
                     android:id="@+id/correction_input"
-                    android:layout_width="130dp"
+                    android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
                     app:customContentDescription="@string/a11_correction_units" />

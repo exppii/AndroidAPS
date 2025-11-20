@@ -56,7 +56,7 @@
     <string name="objectives">目标</string>
     <string name="please_wait">请稍等...</string>
     <string name="stop">停止</string>
-    <string name="carbs">碳水化合物</string>
+    <string name="carbs">碳水</string>
     <string name="active"><![CDATA[<Active>]]></string>
     <string name="date">日期</string>
     <string name="units_label">单位</string>
@@ -64,7 +64,7 @@
     <string name="ic_label">IC碳水系数</string>
     <string name="isf_label">ISF胰岛素敏感系数</string>
     <string name="basal_label">基础率</string>
-    <string name="target_label">血糖目标</string>
+    <string name="target_label">血糖</string>
     <string name="dia_long_label">胰岛素作用持续时间DIA</string>
     <string name="ic_long_label">碳水化合物系数（ICR）</string>
     <string name="isf_long_label">胰岛素敏感系数ISF</string>
@@ -106,7 +106,7 @@
     <string name="alarminxmin">在 %1$d 分钟内运行提醒</string>
     <string name="treatmentdeliveryerror">大剂量输注报告了一个错误。请手动检查真实输注量</string>
     <string name="bolus_reminder">大剂量提醒</string>
-    <string name="duration_label">持续时间</string>
+    <string name="duration_label">持续</string>
     <string name="shortgramm">克</string>
     <string name="pumpsuspended">泵暂停了</string>
     <string name="notconfigured">未配置</string>
@@ -210,6 +210,7 @@
     <string name="manual">手动</string>
     <string name="unknown">未知的</string>
     <string name="eatingsoon">很快吃饭</string>
+    <string name="temporary_target">临时目标</string>
     <string name="hypo">低</string>
     <string name="activity">活动</string>
     <string name="wear">手表</string>
